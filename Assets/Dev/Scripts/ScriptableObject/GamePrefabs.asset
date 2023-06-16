@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a83d876ce6ba840b7644a9f1231212, type: 3}
+  m_Name: GamePrefabs
+  m_EditorClassIdentifier: 
+  gemList:
+  - gemName: Green
+    gemValue: 100
+    gemSprite: {fileID: 21300000, guid: 7539d2fe8bc50e54f85fd3eef1cb15db, type: 3}
+    gemPrefabs: {fileID: 4584854729929946413, guid: f619c37bb7242f5429deff5e937d533b, type: 3}
+  - gemName: Pink
+    gemValue: 200
+    gemSprite: {fileID: 21300000, guid: ef2db3dcedcf7664ba33972642865654, type: 3}
+    gemPrefabs: {fileID: 2185596451998361943, guid: 6120e044d45ef5e4ea56d7e2e28f987d, type: 3}
+  - gemName: Yellow
+    gemValue: 300
+    gemSprite: {fileID: 21300000, guid: e4bcee000e615904582a6dc786551777, type: 3}
+    gemPrefabs: {fileID: 6508823689488978738, guid: cbd24fa82bebf99408e97674474be392, type: 3}
