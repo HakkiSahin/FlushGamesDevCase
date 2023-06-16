@@ -29,6 +29,7 @@ public class ColletController : MonoBehaviour
     }
 
     private IEnumerator co;
+
     private void Update()
     {
         if (Vector3.Distance(transform.position, shopPoint.position) < 6f && !isSell)
@@ -45,7 +46,6 @@ public class ColletController : MonoBehaviour
 
     void CollectBackPack(Transform gem)
     {
-        
         backPackCount++;
         gem.GetComponent<Gem>().Colleted();
         gem.localScale = new Vector3(0.3f, 0.3f, 0.3f);
@@ -55,18 +55,20 @@ public class ColletController : MonoBehaviour
         gem.DOLocalMove(new Vector3(0, backPackCount * 0.3f, 0), 0.3f);
     }
 
-   
+
     void SeelGem()
     {
-        if (backPackCount <=0)
+        if (backPackCount <= 0)
         {
             return;
         }
+
         Transform obj = backPack.GetChild(backPackCount - 1);
 
         obj.DOMove(shopPoint.position, 0.1f).OnComplete(() =>
         {
             SaveLoad._instance.SaveCountGem(obj.name);
+            SaveLoad._instance.Money(obj.GetComponent<Gem>().gemValue);
             Destroy(obj.gameObject);
 
             backPackCount--;
@@ -75,11 +77,9 @@ public class ColletController : MonoBehaviour
                 SeelGem();
             else
                 isSell = false;
-
-
         });
     }
-    
+
 
     //Sell to Shop
     // IEnumerator SellGemEnum()

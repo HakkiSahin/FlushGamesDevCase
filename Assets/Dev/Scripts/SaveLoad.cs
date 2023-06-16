@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SaveLoad : MonoBehaviour
@@ -22,9 +23,12 @@ public class SaveLoad : MonoBehaviour
     public Transform itemsParent;
     public GameObject itemsPrefab;
 
+    public TextMeshProUGUI moneyText;
+
     // Start is called before the first frame update
     void Start()
     {
+        moneyText.text = PlayerPrefs.GetInt("money").ToString();
         // GetData();
     }
 
@@ -55,5 +59,13 @@ public class SaveLoad : MonoBehaviour
         int gemCount = PlayerPrefs.GetInt(gemName);
         gemCount++;
         PlayerPrefs.SetInt(gemName, gemCount);
+    }
+
+    public void Money(int money)
+    {
+        int moneyUpdate = PlayerPrefs.GetInt("money");
+        moneyUpdate += money;
+        moneyText.text = moneyUpdate.ToString();
+        PlayerPrefs.SetInt("money", moneyUpdate);
     }
 }
